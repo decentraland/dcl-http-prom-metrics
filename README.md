@@ -1,4 +1,4 @@
-# dcl-http-prom-metrics
+# dcl-http-prom-metrics
 
 Library to collect and expose Prometheus metrics from an HTTP Rust server.
 
