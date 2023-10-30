@@ -1,0 +1,14 @@
+[package]
+name = "dcl-http-prom-metrics"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+actix-web-lab = { version = "0.18.9", optional = true }
+prometheus = { version = "0.13.3" }
+actix-web = { version = "4.2.1", optional = true }
+
+[features]
+default = ["actix"]
+actix = ["dep:actix-web", "dep:actix-web-lab"]
