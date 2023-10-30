@@ -2,6 +2,13 @@
 name = "dcl-http-prom-metrics"
 version = "0.1.0"
 edition = "2021"
+description = "Decentraland HTTP Prometheus Metrics collector"
+repository = "https://github.com/decentraland/dcl-http-prom-metrics"
+keywords = ["http", "decentraland", "prometheus"]
+categories = ["web-programming", "network-programming"]
+license = "Apache-2.0"
+rust-version = "1.65.0"
+readme = "../README.md"
 
 
 [dependencies]
