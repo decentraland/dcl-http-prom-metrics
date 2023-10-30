@@ -8,7 +8,7 @@ keywords = ["http", "decentraland", "prometheus"]
 categories = ["web-programming", "network-programming"]
 license = "Apache-2.0"
 rust-version = "1.65.0"
-readme = "../README.md"
+readme = "./README.md"
 
 
 [dependencies]
