@@ -59,7 +59,7 @@ impl HttpMetricsCollectorBuilder {
             IntCounterVec::new(http_requests_total_opts, &label_names).unwrap();
 
         let http_requests_duration_seconds_opts = HistogramOpts::new(
-            "http_requests_duration_seconds",
+            "http_request_duration_seconds",
             "HTTP request duration in seconds for all requests",
         )
         .buckets(self.buckets);
@@ -76,7 +76,7 @@ impl HttpMetricsCollectorBuilder {
 
         HttpMetricsCollector {
             registry: self.registry,
-            http_requests_duration_seconds,
+            http_request_duration_seconds: http_requests_duration_seconds,
             http_requests_total,
             endpoint: self.endpoint.unwrap_or("/metrics".to_string()),
         }
@@ -92,7 +92,7 @@ impl Default for HttpMetricsCollectorBuilder {
 pub struct HttpMetricsCollector {
     registry: Registry,
     http_requests_total: IntCounterVec,
-    http_requests_duration_seconds: HistogramVec,
+    http_request_duration_seconds: HistogramVec,
     endpoint: String,
 }
 
@@ -110,7 +110,7 @@ impl HttpMetricsCollector {
         let duration =
             (elapsed.as_secs() as f64) + f64::from(elapsed.subsec_nanos()) / 1_000_000_000_f64;
 
-        self.http_requests_duration_seconds
+        self.http_request_duration_seconds
             .with_label_values(&label_values)
             .observe(duration);
 
