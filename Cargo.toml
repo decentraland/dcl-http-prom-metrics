@@ -1,6 +1,6 @@
 [package]
 name = "dcl-http-prom-metrics"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "Decentraland HTTP Prometheus Metrics collector"
 repository = "https://github.com/decentraland/dcl-http-prom-metrics"
